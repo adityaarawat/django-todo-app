@@ -27,9 +27,9 @@
              <div class="task">
                 <p>{{task.task}}</p>
                 <div class="task-buttons">
-                    <button class="done">Mark as Done</button>
-                    <button class="delete">Delete</button>
-                    <button class="edit">Edit</button>
+                    <a href="{% url 'markAsDone' task.id %}" class="button done">Mark as Done</a>
+                    <a class="button delete">Delete</a>
+                    <a class="button edit">Edit</a>
                 </div>
             </div>
             {% endfor %}
@@ -43,7 +43,9 @@
                 <h2>Completed Task</h2>
             </div>
             <div class="task-completed">
-                <p>1. This is the completed Task.</p>
+                {% for task in completedTask %}
+                <p>{{forloop.counter}}. {{task.task}}</p>
+                {% endfor %}
             </div>
         </div>
         </section>

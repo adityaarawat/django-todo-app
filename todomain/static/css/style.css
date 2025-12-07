@@ -84,7 +84,7 @@ body{
 }
 
 /* all task buttons */
-.task-buttons button{
+.task-buttons .button{
     padding: 5px 8px;
     border: none;
     outline: none;
