@@ -12,3 +12,9 @@ def markAsDone(request,pk):
     markDone.is_completed=True
     markDone.save()
     return redirect("home")
+
+def markAsUndo(request,pk):
+    markUndo=get_object_or_404(Todo,pk=pk)
+    markUndo.is_completed=False
+    markUndo.save()
+    return redirect("home")

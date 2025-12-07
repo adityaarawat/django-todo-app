@@ -44,7 +44,10 @@
             </div>
             <div class="task-completed">
                 {% for task in completedTask %}
-                <p>{{forloop.counter}}. {{task.task}}</p>
+                <p>{{forloop.counter}}. {{task.task}}
+                     <a href="{% url 'markAsUndo' task.id %}" class="button undo">Undo</a>
+                </p>
+               
                 {% endfor %}
             </div>
         </div>

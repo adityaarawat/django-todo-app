@@ -121,6 +121,15 @@ body{
 .task-completed p{
       border: 1px solid #00000064;
       padding: 15px 10px;
+      display: flex;
+      justify-content: space-between;
+}
+.task-completed p a{
+    text-decoration: none;
+    background-color: #007bff;
+    padding: 5px 6px;
+    align-items: center;
+    color: #fff;
 }
 
 /* add task bar */
