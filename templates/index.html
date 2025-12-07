@@ -1,0 +1,57 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Todo App</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Page Title -->
+     <header class="title">
+        <h1>Django ToDo APP</h1>
+     </header>
+
+     <!--Main content Area -->
+     <main class="container">
+        <section class="contentContainer">
+  <!--Left Side Area : Day-->
+        <div class="day-section">
+            <div class="day">
+                <h2>Date</h2>
+                <p class="date">27 March 2002</p>
+            </div>
+            <div class="allTask">
+
+             <div class="task">
+                <p>This is Some Task</p>
+                <div class="task-buttons">
+                    <button class="done">Mark as Done</button>
+                    <button class="delete">Delete</button>
+                    <button class="edit">Edit</button>
+                </div>
+            </div>
+            </div>
+          
+        </div>
+
+        <!--Right Side - Completed Task-->
+        <div class="completed-section">
+            <div class="completed_task">
+                <h2>Completed Task</h2>
+            </div>
+            <div class="task-completed">
+                <p>1. This is the completed Task.</p>
+            </div>
+        </div>
+        </section>
+      <section class="add-section">
+        <div class="add-section-addTask">
+            <input type="text" placeholder="Enter Task">
+             <button class="add-btn">+ Add</button>
+        </div>
+      </section>
+     </main>
+</body>
+</html>

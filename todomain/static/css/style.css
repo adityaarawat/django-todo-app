@@ -1,0 +1,212 @@
+/* reset default style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* full height for body and html */
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+/* main background color */
+body{
+    background-color: #000;
+    color: #fff;
+}
+
+/* heading area */
+.title{
+    text-align: center;
+    padding: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* main wrapper */
+.container{
+   padding: 3rem;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+/* both boxes adjust side by side */
+.contentContainer{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* common style for both boxes */
+.day-section,.completed-section{
+    background-color: #fff;
+    color: #000;
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* scrolling for task area */
+.allTask{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    height: 300px;
+    padding: 1rem;
+}
+
+.day h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.day p{
+    color: rgb(81, 77, 77);
+    margin-bottom: 15px;
+}
+
+/* each task box */
+.task{
+    display: flex;
+    border: 1px solid #00000064;
+    justify-content: space-between;
+    padding: 10px 15px;
+    flex-wrap: wrap;
+}
+
+.task p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* all task buttons */
+.task-buttons button{
+    padding: 5px 8px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.completed_task h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.done{
+    background-color: #28a745;
+}
+.delete{
+    background-color: #dc3545;
+}
+.edit{
+    background-color: #007bff;
+}
+
+/* completed tasks area */
+.task-completed{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    height: 300px;
+}
+
+.task-completed p{
+      border: 1px solid #00000064;
+      padding: 15px 10px;
+}
+
+/* add task bar */
+.add-section{
+    width: 400px;
+    background-color: white;
+    height: 60px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* wrapper for input and button */
+.add-section-addTask{
+    background-color: #fff;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.add-section-addTask input{
+    padding: 10px 15px;
+    height: 100%;
+    width: 70%;
+    border: none;
+    outline: none;
+}
+
+.add-section-addTask,button{
+    flex: 1;
+}
+
+.add-btn{
+    background-color: rgb(23, 106, 133);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* ------------------------------------------ */
+/* ----------- RESPONSIVE PART -------------- */
+/* ------------------------------------------ */
+
+/* mobile screens (up to 600px) */
+@media(max-width: 600px){
+
+    /* simple: reduce padding on small screen */
+    .container{
+        padding: 1rem;
+    }
+
+    /* boxes will come one below another */
+    .contentContainer{
+        flex-direction: column;
+    }
+
+    /* same height but full width now */
+    .day-section,
+    .completed-section{
+        height: 350px;
+    }
+
+    /* input section width full on phone */
+    .add-section{
+        width: 100%;
+    }
+
+    /* buttons will wrap nicely */
+    .task{
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* tablet screen (600px - 992px) */
+@media(max-width: 992px){
+
+    /* give more breathing space */
+    .contentContainer{
+        gap: 20px;
+    }
+
+    .add-section{
+        width: 100%;
+    }
+}
