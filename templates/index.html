@@ -23,15 +23,16 @@
                 <p class="date">27 March 2002</p>
             </div>
             <div class="allTask">
-
+                {% for task in tasks %}
              <div class="task">
-                <p>This is Some Task</p>
+                <p>{{task.task}}</p>
                 <div class="task-buttons">
                     <button class="done">Mark as Done</button>
                     <button class="delete">Delete</button>
                     <button class="edit">Edit</button>
                 </div>
             </div>
+            {% endfor %}
             </div>
           
         </div>
@@ -47,10 +48,13 @@
         </div>
         </section>
       <section class="add-section">
+        <form action="{% url 'addTask' %}" method="POST">
+            {% csrf_token %}
         <div class="add-section-addTask">
-            <input type="text" placeholder="Enter Task">
-             <button class="add-btn">+ Add</button>
+            <input type="text" placeholder="Enter Task" name="task">
+             <button  type="submit" class="add-btn">+ Add</button>
         </div>
+        </form>
       </section>
      </main>
 </body>
