@@ -1,4 +1,4 @@
-from django.shortcuts import redirect,get_object_or_404
+from django.shortcuts import redirect,get_object_or_404,render
 from django.http import HttpResponse
 from .models import Todo
 # Create your views here.
@@ -18,3 +18,16 @@ def markAsUndo(request,pk):
     markUndo.is_completed=False
     markUndo.save()
     return redirect("home")
+
+def editTodo(request,pk):
+    editData=get_object_or_404(Todo,pk=pk)
+    if request.method=="POST":
+        updated_task=request.POST['task']
+        editData.task=updated_task
+        editData.save()
+        return redirect("home")
+    else:
+        context={
+        "editData":editData
+        }
+        return render(request,'editTodo.html',context)  

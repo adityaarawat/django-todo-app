@@ -29,7 +29,7 @@
                 <div class="task-buttons">
                     <a href="{% url 'markAsDone' task.id %}" class="button done">Mark as Done</a>
                     <a class="button delete">Delete</a>
-                    <a class="button edit">Edit</a>
+                    <a href="{% url 'editTodo' task.id %}" class="button edit">Edit</a>
                 </div>
             </div>
             {% endfor %}
