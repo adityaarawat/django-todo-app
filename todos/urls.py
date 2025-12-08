@@ -11,5 +11,8 @@ urlpatterns=[
     path("mark_as_undo/<int:pk>/",views.markAsUndo,name='markAsUndo'),
 
     #Edit 
-    path("edit_todo/<int:pk>/",views.editTodo,name='editTodo')
+    path("edit_todo/<int:pk>/",views.editTodo,name='editTodo'),
+
+    #delete
+    path("delete_todo/<int:pk>/",views.deleteTodo,name="deleteTodo")
 ]

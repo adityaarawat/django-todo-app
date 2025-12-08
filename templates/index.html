@@ -20,7 +20,7 @@
         <div class="day-section">
             <div class="day">
                 <h2>Date</h2>
-                <p class="date">27 March 2002</p>
+                <p class="date">{{today}}</p>
             </div>
             <div class="allTask">
                 {% for task in tasks %}
@@ -28,7 +28,7 @@
                 <p>{{task.task}}</p>
                 <div class="task-buttons">
                     <a href="{% url 'markAsDone' task.id %}" class="button done">Mark as Done</a>
-                    <a class="button delete">Delete</a>
+                    <a href="{% url 'deleteTodo' task.id %}" class="button delete">Delete</a>
                     <a href="{% url 'editTodo' task.id %}" class="button edit">Edit</a>
                 </div>
             </div>

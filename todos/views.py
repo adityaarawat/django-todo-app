@@ -31,3 +31,8 @@ def editTodo(request,pk):
         "editData":editData
         }
         return render(request,'editTodo.html',context)  
+    
+def deleteTodo(request,pk):
+    deleteTodo=get_object_or_404(Todo,pk=pk)
+    deleteTodo.delete()
+    return redirect("home")
